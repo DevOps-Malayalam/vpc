@@ -1,37 +1,55 @@
-## Welcome to GitHub Pages
+# DevOps Malayalam
 
-You can use the [editor on GitHub](https://github.com/DevOps-Malayalam/vpc/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+**Virtual Networks In Cloud**
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+_21 July 21_ 
 
-### Markdown
+## Key Takeaways
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+### Topics Discussed:
+ * VPC/VNet 
+ * Subnets- Public and Private Subnet 
+ * Routing, Route Tables, Internet Gateway and Nat Gateway 
+ * Access Control - Security Group, NACL 
+ * VPC Peering     
+ * OnPremise Connectivity
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+**VPC - AWS  | VNet - Azure**
+**VPC** - Creating our networks in a private environment. We assign IP range so it's basically our private network.
+3 Tier Architecture -  Web Service Layer, Application Layer, Database Layer
+Outside world can access only the web layer and through the web layer only we can access the Application Layer. We can do this using VPC.
+Default VPC IP is exposed so a better approach is to create a new VPC.
+We interact with the outside world with Internet Gateway and we use different services by creating the subnets. We can include these Layers in 3 subnets.
+We can create more than 1 VPC.
 
-1. Numbered
-2. List
+**Routing** - communicating within a particular network . We have a set of rules. And the route table helps to set different routing rules. Eg: Internet Gateway and Nat Gateway. 
+    * NAT - Outbound Traffic. Used usually with Database Layer.
+    * Internet - Both Inbound and Outbound.
 
-**Bold** and _Italic_ and `Code` text
+**Security Group** We can allow different port rules. No denying port rules are available.
+We need to allow different protocols and set port range. 
+NACL - Each subnet can be associated  only with  single NACL at a time. But single NACL can be set to different Subnets.
+Rule Number - Asterisk(*) This rule ensures that if a packet doesn't match any of the other numbered rules, it's denied. You can't modify or remove this rule.
+Adding names for  security groups and descriptions for  rules  is a best practice.
+VPC Peering - Communicating between another VPCs( peering - data sharing)
+When merging two companies, we may have to implement VPC Peering.
+Only the owner of VPC can do VPC peering.  Send the VPC request to another VPC and the second VPC accepts it. 
+Consider VPCs A,B,C. If A is peered with B and A is peered with C, it doesn’t mean that B and C are connected.  Transit Gateways are a good alternative to connect multiple VPCs
+After perring a route table update is needed. 
+Direct Connect - Establish private connection from OnPremise to AWS.  
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+### Follow Us On
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DevOps-Malayalam/vpc/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+[LinkedIn](https://www.linkedin.com/company/devopsmalayalam)
+[ClubHouse](https://github.com/DevOps-Malayalam/Test/settings/pages)
+[Telegram](https://t.me/joinchat/tninMc2bBGdiY2E1)
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+[Queries❓](https://docs.google.com/forms/d/e/1FAIpQLSdXmOgcM1zqVVONSZkrQ_twl2D9G8UBesN5OJ4xMZj_yXgebg/viewform)
+
+_Italic_ 
